@@ -1,8 +1,8 @@
 <template>
   <div class="home bg-gray-200 w-8/12 mx-auto p-20">
-    <h2 class="text-xl m-6">Can I Haz Dad Jokes</h2>  
-    <h3 class="m-6">{{ currentJoke }}</h3>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="addJoke()">Add Joke</button>
+    <h2 class="text-2xl font-bold">Random dad joke:</h2>  
+    <h3 class="mb-12">{{ currentJoke }}</h3>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="fetchJoke()">New Joke</button>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   name: 'Home',
   methods: {
-    addJoke () {
+    fetchJoke () {
       this.$store.dispatch("setCurrentJokeAsync");
     }
   },

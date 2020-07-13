@@ -8,7 +8,7 @@ const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
   state: {
-    currentJoke: 'This is a joke',
+    currentJoke: '',
     allJokes: []
   },
   mutations: { 
@@ -25,7 +25,8 @@ export default new Vuex.Store({
     }
   },
   getters: { 
-    getCurrentJoke: state => state.currentJoke
+    getCurrentJoke: state => state.currentJoke,
+    getAllJokes: state => state.allJokes
   },
   modules: {
   }
