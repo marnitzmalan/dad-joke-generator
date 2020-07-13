@@ -9,9 +9,13 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
+  methods: {
+    ...mapActions(['setCurrentJokeAsync'])
+  },
   mounted () {
-    this.$store.dispatch("setCurrentJokeAsync");
+    this.setCurrentJokeAsync();
   }
 }
 </script>

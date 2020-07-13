@@ -7,17 +7,14 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: 'Home',
   methods: {
-    fetchJoke () {
-      this.$store.dispatch("setCurrentJokeAsync");
-    }
+    ...mapActions({ fetchJoke: 'setCurrentJokeAsync' }),
   },
   computed: {
-    currentJoke() {
-      return this.$store.getters.getCurrentJoke;
-    }
+    ...mapGetters({ currentJoke: 'getCurrentJoke'}),
   }
 }
 </script>
