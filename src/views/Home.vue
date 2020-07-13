@@ -2,16 +2,18 @@
   <div class="home bg-gray-200 w-8/12 mx-auto p-20">
     <h2 class="text-xl m-6">Can I Haz Dad Jokes</h2>  
     <h3 class="m-6">{{ currentJoke }}</h3>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Joke</button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="addJoke()">Add Joke</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  data: () => ({
-  
-  }),
+  methods: {
+    addJoke () {
+      this.$store.dispatch("setCurrentJokeAsync");
+    }
+  },
   computed: {
     currentJoke() {
       return this.$store.getters.getCurrentJoke;

@@ -11,16 +11,14 @@ export default new Vuex.Store({
     currentJoke: 'This is a joke',
     allJokes: []
   },
-  // Synchronous
   mutations: { 
     setCurrentJoke(state, payload) {
       state.currentJoke = payload;
       state.allJokes.push(payload)
     }
   },
-  // Asynchronous
   actions: {  
-    async setCurrentJoke(state) {
+    async setCurrentJokeAsync(state) {
       const joke = await fetch(dadJokesApi, { headers });
       const j = await joke.json();
       state.commit("setCurrentJoke", j.joke);

@@ -11,7 +11,7 @@
 <script>
 export default {
   mounted () {
-    this.$store.dispatch("setCurrentJoke");
+    this.$store.dispatch("setCurrentJokeAsync");
   }
 }
 </script>
